@@ -1,0 +1,17 @@
+systemd-sysv
+systemd-resolved
+firmware-linux-free
+dbus
+vim
+bash-completion
+openssh-client
+wget
+curl
+rsync
+btrfs-progs
+dosfstools
+cifs-utils
+nfs-common
+less
+iputils-ping
+procps
