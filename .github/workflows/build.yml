@@ -39,4 +39,7 @@ jobs:
           title: "Debian sid Live Minimal ISO"
           files: |
             output/debian-sid-live-minimal-x86_64.iso
+            output/filesystem.squashfs
+            output/vmlinuz
+            output/initrd.img
             output/packages.txt

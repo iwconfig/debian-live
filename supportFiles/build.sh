@@ -14,6 +14,7 @@ debootstrap --arch=amd64 --variant=minbase sid $HOME/LIVE_BOOT/chroot http://ftp
 echo Copy supporting documents into the chroot
 cp -v /supportFiles/installChroot.sh $HOME/LIVE_BOOT/chroot/installChroot.sh
 cp -v /supportFiles/sources.list $HOME/LIVE_BOOT/chroot/etc/apt/sources.list
+cp -v /supportFiles/packages.txt $HOME/LIVE_BOOT/chroot/packages.txt
 
 echo Mounting dev / proc / sys
 mount -t proc none $HOME/LIVE_BOOT/chroot/proc
@@ -95,5 +96,7 @@ xorriso \
 
 echo Copy output
 cp -v $HOME/LIVE_BOOT/debian-custom.iso /output/debian-sid-live-minimal-x86_64.iso
-chmod -v 666 /output/debian-sid-live-minimal-x86_64.iso
+cp -v $HOME/LIVE_BOOT/staging/live/{filesystem.squashfs,vmlinuz} /output/
+cp -v $HOME/LIVE_BOOT/staging/live/initrd /output/initrd.img
+chmod -v 666 /output/{debian-sid-live-minimal-x86_64.iso,filesystem.squashfs,vmlinuz,initrd.img}
 ls -lah /output
